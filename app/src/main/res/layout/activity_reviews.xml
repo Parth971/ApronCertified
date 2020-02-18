@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Reviews">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Rate and Review"
+        android:textColor="#429143"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_margin="10dp"/>
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/title"/>
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_below="@+id/ratingBar"-->
+<!--        android:padding="5dp"-->
+<!--        android:id="@+id/feedBack">-->
+
+    <EditText
+        android:id="@+id/edtfeedBack"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_gravity="center_vertical"
+        android:hint="Comments"
+        android:layout_below="@+id/ratingBar"
+        android:inputType="textMultiLine|text"
+        android:gravity="top"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/border_toolbar"
+        android:padding="8dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/camera"
+        android:layout_gravity="center_vertical"
+        android:background="@null"
+        android:layout_below="@id/edtfeedBack"
+        android:layout_marginRight="5dp"
+        android:padding="10dp"
+        android:layout_marginLeft="5dp"
+        android:onClick="onProfileImageClick"/>
+
+
+
+    <Button
+        android:id="@+id/btnOk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:layout_below="@+id/edtfeedBack"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="5dp"/>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:layout_below="@+id/btnOk"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/photosToUpload"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_below="@+id/divider2"
+        android:layout_margin="10dp"/>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="?android:attr/listDivider"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/photosToUpload"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/reviewView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/divider3"
+        android:padding="10dp"/>
+
+
+
+    <!--    </LinearLayout>-->
+<!--    <TextView-->
+<!--        android:id="@+id/reviewHeading"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Reviews:"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_below="@+id/edtfeedBack"/>-->
+
+
+
+
+</RelativeLayout>

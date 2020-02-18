@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "276011138839",
+    "firebase_url": "https://aproncerti.firebaseio.com",
+    "project_id": "aproncerti",
+    "storage_bucket": "aproncerti.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276011138839:android:31d469dbec80a5f3cc8152",
+        "android_client_info": {
+          "package_name": "com.example.aproncertified"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276011138839-btlnej532nddbsqlp3vg2tqorfo5rr59.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdUOqA6zpIVFrx0L--8-PUohpq6b1Pofg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276011138839-btlnej532nddbsqlp3vg2tqorfo5rr59.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

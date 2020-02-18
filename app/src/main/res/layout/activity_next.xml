@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rootLayout"
+    tools:context=".Home"
+    android:orientation="vertical"
+    tools:openDrawer="start">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".Home" />
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_margin="7dp"
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            android:background="@drawable/border_toolbar"
+            android:elevation="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <fragment android:id="@+id/autocomplete_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_gravity="center_vertical"
+                    android:name="com.google.android.libraries.places.widget.AutocompleteSupportFragment" />
+
+                <ImageButton
+                    android:id="@+id/refresh_home"
+                    android:layout_margin="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_refresh"
+                    android:layout_weight="7"
+                    android:layout_marginRight="10dp"
+                    android:padding="10dp"
+                    android:background="@drawable/back_location"/>
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+<!--        <LinearLayout-->
+<!--            android:id="@+id/test"-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="00dp"-->
+<!--            android:background="@drawable/border_toolbar"-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_below="@+id/select">-->
+
+<!--        </LinearLayout>-->
+
+        <ImageButton
+            android:id="@+id/goToCurrentLocation"
+            android:layout_margin="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/my_location"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/back_location"/>
+<!--        <Button-->
+<!--            android:id="@+id/select"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/toolbar"-->
+<!--            android:text="Select"-->
+<!--            android:onClick="select" />-->
+<!--        <Button-->
+<!--            android:id="@+id/upload"-->
+<!--            android:layout_toRightOf="@+id/select"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_below="@id/toolbar"-->
+<!--            android:text="Upload"-->
+<!--            android:onClick="upload" />-->
+
+
+
+    </RelativeLayout>
+
+
+<!--    app:headerLayout="@layout/header_menu"-->
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start|left"
+        android:background="@android:color/background_light"
+        android:id="@+id/nv">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/settingAndSign">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/bottom_line">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="80dp"
+                            android:src="@drawable/logo" />
+
+                        <TextView
+                            style="bold"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="APRON CERTIFIED"
+                            android:textSize="25dp"
+                            android:gravity="center"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/filter"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="Filter"
+                        android:padding="10dp"
+                        android:textSize="25sp"
+                        android:gravity="center"
+                        android:background="@drawable/box"
+                        android:layout_marginTop="5dp"/>
+
+                    <TextView
+                        android:id="@+id/ratingTxtView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text="Rating"
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="10dp"/>
+
+                    <RatingBar
+                        android:id="@+id/ratingBar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.appcompat.widget.AppCompatCheckBox
+                        android:id="@+id/open"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Open" />
+
+                    <RadioGroup
+                        android:id="@+id/types"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/box">
+
+                        <RadioButton
+                            android:id="@+id/restaurants"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Only Restaurants"
+                            android:padding="4dp"/>
+                        <RadioButton
+                            android:id="@+id/foodCart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Only Food Carts"
+                            android:padding="4dp"/>
+                        <RadioButton
+                            android:id="@+id/all"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="All"
+                            android:padding="4dp"
+                            android:checked="true"/>
+
+                    </RadioGroup>
+
+                    <Button
+                        android:id="@+id/apply"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="5dp"
+                        android:text="Apply"
+                        android:background="@drawable/btn_circle_back"/>
+
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <LinearLayout
+                android:id="@+id/settingAndSign"
+                android:layout_width="match_parent"
+                android:layout_height="70dp"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_alignParentBottom="true">
+
+
+                <ImageButton
+                    android:id="@+id/setting"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/setting"
+                    android:background="@drawable/setting_back"
+                    android:padding="5dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="10dp"/>
+
+                <Button
+                    android:id="@+id/signIn"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:background="@drawable/btn_circle_back"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.navigation.NavigationView>
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

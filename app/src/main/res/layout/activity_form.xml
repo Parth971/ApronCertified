@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FormActivity"
+    android:padding="10dp"
+    android:id="@+id/cont">
+
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/main_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/border_toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+        android:gravity="center"
+        android:elevation="4dp"/>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="55dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="@dimen/toolbar_profile_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal">
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/img_profile"
+                    android:layout_width="@dimen/toolbar_profile_width"
+                    android:layout_height="@dimen/toolbar_profile_width"
+                    android:layout_marginTop="@dimen/activity_padding"
+                    android:layout_marginBottom="@dimen/activity_padding"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/baseline_account_circle_black_48"
+                    app:civ_border_color="@android:color/white"
+                    app:civ_border_width="2dp"
+                    android:onClick="onProfileImageClick" />
+
+                <com.mikhaellopez.circularimageview.CircularImageView
+                    android:id="@+id/img_plus"
+                    android:layout_width="@dimen/ic_plus_width"
+                    android:layout_height="@dimen/ic_plus_width"
+                    android:layout_alignBottom="@id/img_profile"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_plus"
+                    app:civ_shadow="true"
+                    app:civ_shadow_radius="1"
+                    android:onClick="onProfileImageClick"/>
+            </RelativeLayout>
+<!--            <ImageButton-->
+<!--                android:id="@+id/profilePic"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:visibility="visible"-->
+<!--                android:background="@drawable/add_profile_image"-->
+<!--                android:src="@drawable/add_a_photo_black"/>-->
+
+
+                <EditText
+                    android:id="@+id/fNameOfSeller"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    app:backgroundTint="#000"
+                    android:hint="First Name"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/lNameOfSeller"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    app:backgroundTint="#000"
+                    android:hint="Last Name"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/businessName"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    app:backgroundTint="#000"
+                    android:hint="Business Name"
+                    android:layout_gravity="center"/>
+                <EditText
+                    android:id="@+id/phoneNum"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:inputType="phone"
+                    android:maxLength="10"
+                    app:backgroundTint="#000"
+                    android:hint="Phone Number"
+                    android:layout_gravity="center"/>
+
+
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <Button
+                    android:id="@+id/btnGetLocationFromMap"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Get location from map"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Latitude"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/txtLatitude"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        android:text="0.0"
+                        android:background="@drawable/box"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="Longitude"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:id="@+id/txtLongitude"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:padding="8dp"
+                        android:text="0.0"
+                        android:background="@drawable/box"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:id="@+id/smallCheckTiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/small_check"
+                    android:background="@null"
+                    android:visibility="gone"/>
+                <Button
+                    android:visibility="visible"
+                    android:id="@+id/selectTiming"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Add Business Hours"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:text="Business Type"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:padding="4dp"/>
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Restaurant"
+                        android:layout_weight="1"
+                        android:checked="true"/>
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Food Cart"
+                        android:layout_weight="1"/>
+                </RadioGroup>
+
+
+
+
+            </LinearLayout>
+
+
+
+            <Button
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Submit"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/submit"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MergeRootFrame" />
+    <FrameLayout
+        android:id="@+id/markerConatainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MergeRootFrame" />
+    <FrameLayout
+        android:id="@+id/menuContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="MergeRootFrame" />
+
+
+
+</RelativeLayout>
